@@ -51,8 +51,17 @@ module Euler
 
   def prime_factors(n)
     result = []
-    (2..sqrt(n)).each do |i|
+    (2..(n/2)).each do |i|
       result << i  if ( n%i != 0 && is_prime?(i))
+    end
+    result
+  end
+
+
+  def factors(n)
+    result = []
+    (1..n/2).each do |i|
+      result << i if (n%i).zero?
     end
     result
   end
